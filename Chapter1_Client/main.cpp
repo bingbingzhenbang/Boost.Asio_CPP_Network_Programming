@@ -1,7 +1,9 @@
 void BasicSynClient();
+void BasicASynClient();
 
 int main()
 {
-	BasicSynClient();
+	//BasicSynClient();
+	BasicASynClient();
 	return 0;
 }
