@@ -2,6 +2,7 @@
 #include <boost/shared_ptr.hpp>
 #include <boost/thread.hpp>
 #include <boost/bind.hpp>
+#include <iostream>
 
 using namespace boost;
 using namespace boost::asio;
@@ -9,13 +10,20 @@ using namespace boost::asio;
 namespace{
 	typedef shared_ptr<ip::tcp::socket> SocketPtr;
 	const int SIZE = 512;
-
 	void ClientSession(SocketPtr sock)
 	{
-		char data[SIZE];
-		size_t len = sock->read_some(buffer(data));
-		if (len > 0)
-			sock->write_some(buffer("ok"));
+		try
+		{
+			char data[SIZE];
+			size_t len = sock->read_some(buffer(data));
+			std::cout << data << std::endl;
+			if (len > 0)
+				write(*sock, (buffer("ok")));
+		}
+		catch (std::exception &e)
+		{
+			std::cout << e.what() << std::endl;
+		}
 	}
 }
 
