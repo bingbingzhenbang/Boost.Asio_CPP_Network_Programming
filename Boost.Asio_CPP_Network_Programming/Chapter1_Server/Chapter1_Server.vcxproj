@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BasicASynServer.cpp" />
     <ClCompile Include="BasicSynServer.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>

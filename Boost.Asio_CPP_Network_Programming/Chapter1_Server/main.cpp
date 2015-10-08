@@ -1,7 +1,9 @@
 void BasicSynServer();
+void BasicASynServer();
 
 int main()
 {
-	BasicSynServer();
+	//BasicSynServer();
+	BasicASynServer();
 	return 0;
 }
