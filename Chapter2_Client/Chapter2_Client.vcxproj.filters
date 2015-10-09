@@ -21,5 +21,8 @@
     <ClCompile Include="Resolver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SynTCPsocket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
