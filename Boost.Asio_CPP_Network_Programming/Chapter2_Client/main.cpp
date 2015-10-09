@@ -1,7 +1,9 @@
 void Resolver();
+void SynTCPsocket();
 
 int main()
 {
-	Resolver();
+	//Resolver();
+	SynTCPsocket();
 	return 0;
 }
