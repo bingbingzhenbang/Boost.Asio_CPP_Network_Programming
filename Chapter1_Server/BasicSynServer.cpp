@@ -14,7 +14,7 @@ namespace{
 	{
 		try
 		{
-			char data[SIZE];
+			char data[SIZE] = {'\0'};
 			size_t len = sock->read_some(buffer(data));
 			std::cout << data << std::endl;
 			if (len > 0)
