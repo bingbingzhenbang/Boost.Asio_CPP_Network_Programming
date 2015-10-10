@@ -143,9 +143,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ASynUDPsocket.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Resolver.cpp" />
     <ClCompile Include="SynTCPsocket.cpp" />
+    <ClCompile Include="SynUDPsocket.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

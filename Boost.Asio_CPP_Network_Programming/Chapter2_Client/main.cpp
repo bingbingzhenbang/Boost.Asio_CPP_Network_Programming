@@ -1,9 +1,13 @@
 void Resolver();
 void SynTCPsocket();
+void SynUDPsocket();
+void ASynUDPsocket();
 
 int main()
 {
 	//Resolver();
-	SynTCPsocket();
+	//SynTCPsocket();
+	//SynUDPsocket();
+	ASynUDPsocket();
 	return 0;
 }
