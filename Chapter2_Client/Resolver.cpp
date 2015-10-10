@@ -13,5 +13,9 @@ void Resolver()
 	ip::tcp::resolver::query qry("www.baidu.com", "80");
 	ip::tcp::resolver::iterator iter = rlv.resolve(qry), end;
 	if (iter != end)
+	{
 		std::cout << iter->endpoint().address().to_string() << std::endl;
+		ip::tcp::socket sock(service);
+		connect(sock, iter);
+	}
 }
