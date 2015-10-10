@@ -148,6 +148,7 @@
     <ClCompile Include="Resolver.cpp" />
     <ClCompile Include="SynTCPsocket.cpp" />
     <ClCompile Include="SynUDPsocket.cpp" />
+    <ClCompile Include="WindowsFileHandle.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
