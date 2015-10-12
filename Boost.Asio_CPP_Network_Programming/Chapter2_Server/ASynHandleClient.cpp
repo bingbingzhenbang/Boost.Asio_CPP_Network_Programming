@@ -4,59 +4,49 @@
 #include <algorithm>
 #include <boost/asio.hpp>
 #include <boost/bind.hpp>
+#include <boost/thread.hpp>
 
 using namespace boost;
 using namespace boost::asio;
 using namespace boost::system;
 
 namespace{
-	const int BUFSIZE = 1024;
+	io_service g_service;
+	typedef shared_ptr<ip::tcp::socket> SocketPtr;
+	typedef shared_ptr<streambuf> BufPtr;
 	struct Client
 	{
-		ip::tcp::socket m_socket;
-		char m_buff[BUFSIZE];
-		int m_already_read;
+		SocketPtr m_socket;
+		BufPtr m_buff;
+		Client() : m_socket(new ip::tcp::socket(g_service)), m_buff(new streambuf){}
 	};
 	std::vector<Client> g_clients;
 
-	void OnReadMsg(Client &c, const std::string &msg)
+	void OnRead(Client &c, const error_code &ec, size_t read_bytes)
 	{
-		if (msg == "request login")
-			c.m_socket.write_some(buffer("request ok\n"));
+		std::istream in(&*c.m_buff);
+		std::string msg;
+		std::getline(in, msg);
+		if (msg == "request_login")
+		{
+		}
+		async_read_until(*c.m_socket, *c.m_buff, '\n', bind(OnRead, c, _1, _2));
 	}
 
-	void OnRead(Client &c)
+	void HandleClientsThread()
 	{
-		int to_read = std::min<int>(BUFSIZE - c.m_already_read, c.m_socket.available());
-		c.m_socket.read_some(buffer(c.m_buff + c.m_already_read, to_read));
-		c.m_already_read += to_read;
-		char *pos_char = std::find(c.m_buff, c.m_buff + c.m_already_read, '\n');
-		if (pos_char < c.m_buff + c.m_already_read)
-		{
-			std::string msg(c.m_buff, pos_char);
-			std::copy(pos_char, c.m_buff + BUFSIZE, c.m_buff);
-			c.m_already_read -= (pos_char - c.m_buff);
-			OnReadMsg(c, msg);
-		}
+		g_service.run();
 	}
 }
 
 void ASynHandleClients()
 {
-	try
+	for (int i = 0; i < g_clients.size(); ++i)
 	{
-		while (true)
-		{
-			for (int i = 0; i < g_clients.size(); ++i)
-			{
-				if (g_clients[i].m_socket.available())
-					OnRead(g_clients[i]);
-			}
-		}
+		async_read_until(*g_clients[i].m_socket, *g_clients[i].m_buff, '\n', bind(OnRead, g_clients[i], _1, _2));
 	}
-	catch (system::system_error &e)
+	for (int i = 0; i < 10; ++i)
 	{
-		std::cout << e.code() << std::endl
-			<< e.what() << std::endl;
+		thread(HandleClientsThread);
 	}
 }
