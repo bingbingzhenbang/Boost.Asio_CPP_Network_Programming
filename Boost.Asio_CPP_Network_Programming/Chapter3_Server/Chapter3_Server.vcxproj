@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{3FB15E61-DB33-491D-BE4A-DCD63103CC48}</ProjectGuid>
+    <ProjectGuid>{63DFA151-3325-4894-AA50-8A6EE828DBA2}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Chapter2_Server</RootNamespace>
+    <RootNamespace>Chapter3_Server</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -143,11 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ASynHandleClient.cpp" />
-    <ClCompile Include="ASynWork.cpp" />
-    <ClCompile Include="Dispatch.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="SynHandleClients.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
