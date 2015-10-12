@@ -145,6 +145,7 @@
   <ItemGroup>
     <ClCompile Include="ASynHandleClient.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SynHandleClients.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
