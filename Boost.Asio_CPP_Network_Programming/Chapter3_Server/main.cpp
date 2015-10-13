@@ -1,9 +1,11 @@
 void TCPSynServer();
 void TCPASynServer();
+void UDPSynServer();
 
 int main()
 {
-	TCPSynServer();
-	//TCPASynServer();
+	//TCPSynServer();
+	TCPASynServer();
+	//UDPSynServer();
 	return 0;
 }
