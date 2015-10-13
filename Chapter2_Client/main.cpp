@@ -3,6 +3,7 @@ void SynTCPsocket();
 void SynUDPsocket();
 void ASynUDPsocket();
 void WindowsFileHandle();
+void TestConnection();
 
 int main()
 {
@@ -10,6 +11,7 @@ int main()
 	//SynTCPsocket();
 	//SynUDPsocket();
 	//ASynUDPsocket();
-	WindowsFileHandle();
+	//WindowsFileHandle();
+	TestConnection();
 	return 0;
 }

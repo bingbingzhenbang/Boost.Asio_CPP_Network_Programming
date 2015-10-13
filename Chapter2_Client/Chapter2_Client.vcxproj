@@ -144,6 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ASynUDPsocket.cpp" />
+    <ClCompile Include="Connection.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Resolver.cpp" />
     <ClCompile Include="SynTCPsocket.cpp" />
