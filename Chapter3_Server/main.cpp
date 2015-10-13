@@ -5,7 +5,7 @@ void UDPSynServer();
 int main()
 {
 	//TCPSynServer();
-	TCPASynServer();
-	//UDPSynServer();
+	//TCPASynServer();
+	UDPSynServer();
 	return 0;
 }
