@@ -1,7 +1,9 @@
 void TCPSynServer();
+void TCPASynServer();
 
 int main()
 {
-	TCPSynServer();
+	//TCPSynServer();
+	TCPASynServer();
 	return 0;
 }
