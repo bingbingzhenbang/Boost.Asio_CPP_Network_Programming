@@ -24,5 +24,8 @@
     <ClCompile Include="TCPASynClient.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UDPSynClient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

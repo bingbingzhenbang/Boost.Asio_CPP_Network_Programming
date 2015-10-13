@@ -146,6 +146,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TCPASynClient.cpp" />
     <ClCompile Include="TCPSynClient.cpp" />
+    <ClCompile Include="UDPSynClient.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

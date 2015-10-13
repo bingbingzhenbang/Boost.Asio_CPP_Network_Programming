@@ -3,7 +3,7 @@ void TCPASynServer();
 
 int main()
 {
-	//TCPSynServer();
-	TCPASynServer();
+	TCPSynServer();
+	//TCPASynServer();
 	return 0;
 }
