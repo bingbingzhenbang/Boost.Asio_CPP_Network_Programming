@@ -3,7 +3,7 @@ void ASynServer();
 
 int main()
 {
-	SynServer();
-	//ASynServer();
+	//SynServer();
+	ASynServer();
 	return 0;
 }
