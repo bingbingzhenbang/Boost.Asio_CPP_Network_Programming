@@ -3,7 +3,7 @@ void ASynClient();
 
 int main()
 {
-	SynClient();
-	//ASynClient();
+	//SynClient();
+	ASynClient();
 	return 0;
 }
