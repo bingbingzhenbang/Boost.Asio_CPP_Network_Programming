@@ -125,7 +125,9 @@ namespace{
 
 	void TalkToClient::UpdateClientsChanged()
 	{
-
+		for (ClientsArray::iterator itr = g_clients.begin();
+			itr != g_clients.end(); ++itr)
+			itr->get()->SetClientsChanged();
 	}
 
 	void TalkToClient::OnLogin(const std::string &msg)
@@ -200,7 +202,7 @@ void SynServer()
 	}
 	catch (system::system_error &e)
 	{
-		std::cout << "Client terminated. "
+		std::cout << "Server terminated. "
 			<< e.code() << " " << e.what() << std::endl;
 	}
 }
