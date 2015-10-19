@@ -176,12 +176,16 @@ void ASynClient()
 	try
 	{
 		ip::tcp::endpoint ep(ip::address::from_string("127.0.0.1"), 8001);
-		char *messages[] = { "John say hi", "so does James", "Lucy just got home", "Boost.Asio is fun!", 0 };
-		for (char **msg = messages; *msg; ++msg)
-		{
-			TalkToSvr::Start(ep, *msg);
-			this_thread::sleep(posix_time::microsec(100));
-		}
+		//char *messages[] = { "John say hi", "so does James", "Lucy just got home", "Boost.Asio is fun!", 0 };
+		//for (char **msg = messages; *msg; ++msg)
+		//{
+		//	TalkToSvr::Start(ep, *msg);
+		//	this_thread::sleep(posix_time::microsec(100));
+		//}
+		std::string user_name;
+		std::cout << "input user name : " << std::endl;
+		std::cin >> user_name;
+		TalkToSvr::Start(ep, user_name);
 		g_service.run();
 	}
 	catch (system::system_error &e)

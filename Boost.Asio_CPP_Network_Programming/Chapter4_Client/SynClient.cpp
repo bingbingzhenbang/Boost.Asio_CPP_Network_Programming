@@ -57,7 +57,7 @@ namespace{
 		{
 			WriteRequest();
 			ReadAnswer();
-			//this_thread::sleep(posix_time::millisec( rand() % 7000 ));
+			this_thread::sleep(posix_time::millisec(rand() % 7000));
 		}
 	}
 
