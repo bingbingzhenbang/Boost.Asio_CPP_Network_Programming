@@ -46,6 +46,7 @@ void StreamServer()
 				Person p;
 				in >> p;
 				std::cout << p << std::endl;
+				//std::cout << &buf;
 			}
 		}
 	}
