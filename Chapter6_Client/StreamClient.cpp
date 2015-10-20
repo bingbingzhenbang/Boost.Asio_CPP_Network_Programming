@@ -37,6 +37,5 @@ void StreamClient()
 	Person p;
 	std::cin >> p;
 	out << p << std::endl;
-	//std::cout << &buf << std::endl;
 	write(sock, buf);
 }
