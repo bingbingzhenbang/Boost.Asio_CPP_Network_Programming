@@ -24,7 +24,7 @@ void BasicASynClient()
 		io_service service;
 		ip::tcp::endpoint ep(ip::address::from_string("127.0.0.1"), 6688);
 		SocketPtr sock(new ip::tcp::socket(service));
-		sock->async_connect(ep, bind(ConnectHandler, placeholders::error, sock));
+		sock->async_connect(ep, bind(ConnectHandler, boost::asio::placeholders::error, sock));
 		service.run();
 	}
 	catch (system::system_error &e)

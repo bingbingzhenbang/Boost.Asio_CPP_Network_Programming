@@ -18,7 +18,7 @@ namespace{
 
 	void StartAccept(SocketPtr sock)
 	{
-		g_acc.async_accept(*sock, bind(HandleAccept, placeholders::error, sock));
+		g_acc.async_accept(*sock, bind(HandleAccept, boost::asio::placeholders::error, sock));
 	}
 
 	void HandleAccept(const system::error_code &err, SocketPtr sock)
