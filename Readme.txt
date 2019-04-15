@@ -1,1 +1,1 @@
-Boost is built on Visual Studio 2013.
+Boost is built on Visual Studio 2017.
